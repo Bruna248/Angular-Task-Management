@@ -1,12 +1,9 @@
 import { Component, EventEmitter, Input, Output, inject} from '@angular/core';
-import { FormsModule } from '@angular/forms'; //to use ngModel
-
-import { NewTaskData } from '../task/task.model';
 import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-new-task',
-  imports: [FormsModule],
+  standalone: false,
   templateUrl: './new-task.html',
   styleUrl: './new-task.css',
 })
@@ -15,7 +12,7 @@ export class NewTask {
   @Output() close = new EventEmitter<void>();
 
   //enteredTitle = signal('');  -> using signals, but ngModel not compatible because of the two-way binding
-  enteredTitle = '';
+  enteredTitle = 'Default Value';
   enteredSummary = '';
   enteredDate = '';
 

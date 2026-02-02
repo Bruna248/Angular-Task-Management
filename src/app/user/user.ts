@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { type UserType } from './user.model';
-import { Card } from "../shared/card/card";
 
 
 @Component({
   selector: 'app-user',
-  imports: [Card],
+  standalone: false,
   templateUrl: './user.html',
   styleUrl: './user.css',
 })// o que eu meter dentro da class User vai estar disponivel no user.html
